@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090d18">
+    <meta name="description" content="A responsive neon snake game. Eat the food, grow longer, and beat your high score.">
+    <title>Neon Snake</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Neon Snake home">
+          <span class="brand-mark" aria-hidden="true">S</span>
+          <span>NEON<span class="brand-light">SNAKE</span></span>
+        </a>
+        <span class="game-tag"><span class="status-dot" aria-hidden="true"></span> ARCADE MODE</span>
+      </header>
+
+      <section class="game-layout" aria-labelledby="game-title">
+        <div class="game-main">
+          <div class="game-heading">
+            <div>
+              <p class="eyebrow">CLASSIC ARCADE</p>
+              <h1 id="game-title">Snake<span class="title-period">.</span></h1>
+              <p class="subtitle">A little focus. A lot of apples.</p>
+            </div>
+            <div class="game-stats" aria-label="Game statistics">
+              <div class="stat-card">
+                <span class="stat-label">SCORE</span>
+                <strong id="score">000</strong>
+              </div>
+              <div class="stat-card stat-card-best">
+                <span class="stat-label">BEST</span>
+                <strong id="high-score">000</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="board-frame">
+            <div class="board-topline">
+              <span><span class="live-indicator" aria-hidden="true"></span> GAME FIELD</span>
+              <span id="game-status-label">READY</span>
+            </div>
+            <div id="game-board" class="game-board" role="img" aria-label="Snake game board. Press Start to play."></div>
+            <div id="board-overlay" class="board-overlay">
+              <div class="overlay-content">
+                <span id="overlay-icon" class="overlay-icon" aria-hidden="true">▶</span>
+                <h2 id="overlay-title">Ready when you are</h2>
+                <p id="overlay-message">Collect the glowing orbs. Don't run into yourself.</p>
+                <button id="overlay-start" class="button button-primary" type="button">Start game <span aria-hidden="true">↗</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-row">
+            <div class="action-buttons">
+              <button id="start-button" class="button button-primary" type="button">Start game <span aria-hidden="true">↗</span></button>
+              <button id="pause-button" class="button button-secondary" type="button" disabled>Pause <span aria-hidden="true">Ⅱ</span></button>
+              <button id="restart-button" class="button button-quiet" type="button">Restart <span aria-hidden="true">↻</span></button>
+            </div>
+            <p class="keyboard-hint"><kbd>SPACE</kbd> pause <span aria-hidden="true">·</span> <kbd>R</kbd> restart</p>
+          </div>
+        </div>
+
+        <aside class="sidebar" aria-label="How to play">
+          <section class="side-card controls-card">
+            <div class="side-card-heading">
+              <span class="side-icon" aria-hidden="true">⌘</span>
+              <h2>Controls</h2>
+            </div>
+            <p class="side-copy">Choose your direction and chase the next glow.</p>
+            <div class="keyboard-layout" aria-label="Use the arrow keys or W, A, S, D to move">
+              <kbd class="key-up">↑</kbd>
+              <kbd class="key-left">←</kbd><kbd class="key-down">↓</kbd><kbd class="key-right">→</kbd>
+            </div>
+            <p class="control-caption">ARROW KEYS <span>OR</span> WASD</p>
+            <div class="touch-controls" aria-label="Touch direction controls">
+              <button class="direction-button direction-up" type="button" data-direction="up" aria-label="Move up">↑</button>
+              <button class="direction-button direction-left" type="button" data-direction="left" aria-label="Move left">←</button>
+              <button class="direction-button direction-down" type="button" data-direction="down" aria-label="Move down">↓</button>
+              <button class="direction-button direction-right" type="button" data-direction="right" aria-label="Move right">→</button>
+            </div>
+          </section>
+
+          <section class="side-card objective-card">
+            <div class="side-card-heading">
+              <span class="side-icon food-icon" aria-hidden="true">✦</span>
+              <h2>The mission</h2>
+            </div>
+            <p class="side-copy">Eat the glowing food to grow and score. Every orb is worth <strong>10 points.</strong></p>
+            <div class="tip">
+              <span class="tip-icon" aria-hidden="true">↗</span>
+              <p>Your snake gets faster as your score climbs. Stay sharp!</p>
+            </div>
+          </section>
+
+          <p class="sidebar-footer"><span aria-hidden="true">●</span> NO DOWNLOADS. JUST GOOD REFLEXES.</p>
+        </aside>
+      </section>
+
+      <footer class="page-footer">
+        <span>BUILT FOR THE LOVE OF THE GAME</span>
+        <span class="footer-decoration" aria-hidden="true">✳</span>
+      </footer>
+      <p id="announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+    </main>
+  </body>
+</html>
