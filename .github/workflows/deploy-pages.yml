@@ -3,7 +3,7 @@ name: Deploy Snake game to GitHub Pages
 on:
   push:
     branches:
-      - crshivam16-snake-game
+      - main
   workflow_dispatch:
 
 permissions:
